@@ -1,0 +1,57 @@
+@import url(sub.css);
+
+#content .title {margin-bottom: 0; padding-bottom: 0.25em; border-bottom: none;
+  text-align: center;}
+#content .byline {padding: 0 0 1em; margin: 0; text-align: center; text-transform: none;}
+
+#content .ishinfo {text-align: center; border-bottom: 1px dotted #B2B2B2; padding-bottom: 1em; margin-bottom: 1.5em;}
+#content h2 {margin: 1.25em 0 0.25em; font-size: 1.5em; color: #000;}
+#content p {margin-bottom: 1.33em;}
+
+#metastuff {text-align: center; font: 1em Georgia, serif; padding: 0.75em 0 0.5em; margin: 0.25em 0 0.5em; background: #F8F7EF; border: 1px dotted #B2B2B2; border-width: 1px 0;}
+#content #metastuff li, #content #metastuff p {display: inline; padding: 0; margin: 0; background: none;}
+#content #metastuff li.discuss {display: block;}
+#content #metastuff a {font: 0.9em Verdana, sans-serif; border-bottom-width: 0;}
+#content #metastuff a:hover {border-bottom-width: 1px;}
+#content #metastuff b {margin: 0 0.5em;}
+#content #metastuff p a {background: url(/pix/comment_tn.gif) 0 0 no-repeat;
+  padding-left: 20px;}
+
+#content a.warning {float: left; position: relative; overflow: hidden;
+  width: 50px; height: 50px; border: none; margin: 0 10px 10px 0;
+  background: url(/pix/warning.gif) bottom left no-repeat;}
+#content a.warning:hover img {visibility: hidden;}
+
+#content .illustration p {font: italic 95%/1.6em Georgia, serif; border-top: 1px dotted #ccc; color: #333; margin: 0; padding-top: 5px;}
+#content .illustration img {display: block; margin-bottom: 5px;}
+#content .full p {margin-bottom: 20px;}
+.illustration {float: right; margin: 0 0 5px 20px; text-align: center;}
+.otherway, .left {float: left; margin: 0 20px 5px 0;}
+.full {float: none; width: 540px; margin: 0;}
+.half {width: 270px;}
+.third {width: 180px;}
+.quarter {width: 135px;}
+
+#authorbio img {float: left; margin: 0.5em 10px 10px 0;}
+#credits {font: italic 1em Georgia, serif; text-align: right; margin-top: 1em; padding-top: 1em; border-bottom: 1px dotted #999;}
+#content #credits li {background: none;}
+
+#content div.discuss {position: relative; background: #F8F7EF url(/pix/bg_discuss-module.gif) 0 5px no-repeat; border: 1px dotted #999; border-width: 1px 0;}
+#content div.discuss h2, #content .discuss p {padding: 0 0 0 70px; margin: 0;}
+#content div.discuss h2 {padding-top: 0.5em; padding-right: 285px; border-top: 5px solid white;}
+#content div.discuss p {padding-bottom: 0.75em; padding-right: 285px; line-height: 1.5em; border-bottom: 5px solid white;}
+	#content div.discuss p span {display: block;}
+#content div.discuss div#shareLinks {position: absolute; top: 5px; right: 0; width: 145px; min-height: 75px; padding-left: 13px;}
+	#content div.discuss div#shareLinks h2 {margin-bottom: 2px; border-top: 0; padding-left: 2px;}
+	#content div.discuss div#shareLinks a {margin-right: 3px; text-decoration: none; border-bottom: 0; opacity: .7;}
+		#content div.discuss div#shareLinks a:hover {opacity: 1;}
+
+/* Editorial note */
+
+#content .ednote {padding: 0.5em; background: #F8F7EF; margin: 0; color: #666;}
+#content .ednote p {padding: 0.5em; margin: 0;}
+
+/* Callout note */
+
+#content .callout {padding: 1em; background: #F8F7EF; margin: 0; color: #333; border: 1px solid #d2cdb0;}
+#content .callout p {padding: 1em; margin: 0;}

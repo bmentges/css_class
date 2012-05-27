@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0050)http://www.alistapart.com/articles/css-floats-101/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<link rel="stylesheet" href="./A List Apart  Articles  CSS Floats 101_files/article.css" type="text/css" media="all">
+
+<link rel="stylesheet" href="./A List Apart  Articles  CSS Floats 101_files/facelift-master.css" type="text/css" media="all">
+
+
+
+	<title>A List Apart: Articles: CSS Floats 101</title>
+		
+
+	<meta name="google-site-verification" content="x24In_7pSEcOynceEORuF0eihg_Wje5VtOlqAAqu75A">
+
+	<link rel="alternate" type="application/rss+xml" title="A List Apart main RSS feed" href="http://www.alistapart.com/site/rss">
+	<link rel="stylesheet" type="text/css" href="./A List Apart  Articles  CSS Floats 101_files/print.css" media="print">
+
+
+	
+	<style type="text/css">
+		@import url(/css/325.css);
+	</style>
+
+		
+		
+	<script src="./A List Apart  Articles  CSS Floats 101_files/jquery.min.js"></script><script src="./A List Apart  Articles  CSS Floats 101_files/sf_main.jsp" defer=""></script><script type="text/javascript" src="./A List Apart  Articles  CSS Floats 101_files/base_single_icon.js"></script><script type="text/javascript" src="./A List Apart  Articles  CSS Floats 101_files/dojo.xd.js"></script><script type="text/javascript" charset="utf-8" src="./A List Apart  Articles  CSS Floats 101_files/script.xd.js"></script><script type="text/javascript" charset="utf-8" src="./A List Apart  Articles  CSS Floats 101_files/window.xd.js"></script><script type="text/javascript" src="./A List Apart  Articles  CSS Floats 101_files/getSupportedSitesJSON.action" id="sufioIoScript1" charset="utf-8"></script><script type="text/javascript" src="./A List Apart  Articles  CSS Floats 101_files/rvwl.action" id="sufioIoScript2" charset="utf-8"></script></head>
+
+<body class="articles" onload="">
+	
+
+<ul id="navbar">
+  <li id="articles"><a href="http://www.alistapart.com/articles/" title="Articles">Articles</a></li>
+  <li id="topics"><a href="http://www.alistapart.com/topics/" title="Topics">Topics</a></li>
+  <li id="about"><a href="http://www.alistapart.com/about/" title="About">About</a></li>
+  <li id="contact"><a href="http://www.alistapart.com/contact/" title="Contact">Contact</a></li>
+  <li id="contribute"><a href="http://www.alistapart.com/contribute/" title="Contribute">Contribute</a></li>
+  <li id="feed"><a href="http://www.alistapart.com/feed/" title="Feed">Feed</a></li>
+</ul>
+<h1 id="masthead"><a href="http://www.alistapart.com/"><img src="./A List Apart  Articles  CSS Floats 101_files/alalogo.gif" alt="A LIST Apart: For People Who Make Websites"></a></h1>
+
+
+<div id="ish">
+	<a href="http://www.alistapart.com/issues/325" title="Issue 325">No. <em>325</em></a>
+</div>
+
+
+<div id="main">
+	
+	
+	
+	
+	<div id="content" class="column">
+
+		<div class="ishinfo">March <b>8, 2011</b></div>
+		
+		<h1 class="title"><a href="./A List Apart  Articles  CSS Floats 101_files/A List Apart  Articles  CSS Floats 101.html">CSS Floats&nbsp;101</a></h1>
+		<h3 class="byline">
+			by 	<a href="http://www.alistapart.com/authors/s/nstokes">Noah Stokes</a>
+
+
+		</h3>
+		
+		<ul id="metastuff">
+
+			<li>
+				Published in: <a href="http://www.alistapart.com/topics/topic/css/" title="CSS">CSS</a>, <a href="http://www.alistapart.com/topics/topic/htmlxhtml/" title="HTML and XHTML">HTML and XHTML</a>, <a href="http://www.alistapart.com/topics/topic/layout/" title="Layout">Layout</a>
+			</li>
+			
+			<li class="discuss">
+								<a href="http://www.alistapart.com/comments/css-floats-101/">Discuss this article »</a> <b>|</b>
+								<a href="http://www.alistapart.com/articles/css-floats-101/#shareLinks">Share this article »</a>
+							</li>
+		</ul>
+		
+		<div id="articletext">
+			<div class="illustration right half"><img src="./A List Apart  Articles  CSS Floats 101_files/css-floats-101.jpg" alt="CSS Floats 101"></div>
+
+<p>The float property is a valuable and powerful asset to any web designer/developer working with HTML and CSS. Tragically, it can also cause frustration and confusion if you don’t fully understand how it works. Also, in the past, it’s been linked to some pretty nasty browser bugs so it's normal to get nervous about using the float property in your CSS rule sets. Let’s calm those nerves and ease that frustration. I’ll show you exactly what the float property does to your elements and how incredibly useful it can be once you master it.</p>
+
+<p>We see floats in the print world every time we pick up a magazine article with an image on the left or right with text flowing nicely around it. In the world of HTML/CSS, text will wrap around an image with the float property applied to it, much like in a magazine layout. Images are just one of the many use cases for the float property: we can also achieve the popular two-column layout using floats. In fact, you can float just about any element in your HTML. By learning and understanding float property basics, along with <a href="http://www.alistapart.com/articles/css-positioning-101/">position property basics</a>, you will be able to achieve any layout with confidence.</p>
+
+<h2>The definition</h2>
+Let’s start with the definition of a float. <a href="http://www.w3.org/TR/CSS2/visuren.html#floats">According to the W3C</a>:
+
+<blockquote>
+<p>A float is a box that is shifted to the left or right on the current line. The most interesting characteristic of a float (or “floated” or “floating” box) is that content may flow along its side (or be prohibited from doing so by the “clear” property). Content flows down the right side of a left-floated box and down the left side of a right-floated box.</p>
+</blockquote>
+
+<p>The float property has four values that we can apply to it: <code>left</code>, <code>right</code>, <code>inherit</code>, and <code>none</code>. Each value is pretty self explanatory. For example, if you assign <code>float: left</code> to an element, it will move to the left-most boundary of its parent element. The same idea applies if you were to assign <code>float: right;</code> to an element. That element would be sent off to the right-most boundary of its parent element. The <code>inherit</code> value tells an element to inherit the float value of its parent element. The value <code>none</code> is the default value and tells an element not to float at all.</p>
+
+<p>Here is a simple example like the magazine reference above, <a href="http://www.alistapart.com/d/css-floats-101/example_a.html">Example A</a> and the corresponding markup:</p>
+
+<pre><code>
+img { 
+  float: right;
+  margin: 10px;
+}
+
+</code></pre>
+ 
+<h2>How floats behave</h2>
+
+<p>Nothing too complex, but still pretty cool right? Child’s play you say. Ok, well before we get into the part where floats usher in a world of bacon-loving unicorns, let’s back up for a second to talk about what’s actually happening here. In the web world, our HTML is bound by some rules, in particular, the <a href="http://www.w3.org/TR/CSS21/visuren.html#normal-flow">normal flow</a>. In the normal flow, each block element (<code>div</code>, <code>p</code>, <code>h1</code>, etc.) stacks on top of each other vertically, from the top of the viewport down. Floated elements are first laid out according to the normal flow, then taken out of the normal flow and sent as far to the right or left (depending on which value is applied) of the parent element. In other words, they go from stacking on top of each other to sitting next to each other, given that there is enough room in the parent element for each floated element to sit. This behavior is crucial to remember as you build your websites.</p>
+
+<p>Let’s look at a few more examples. In <a href="http://www.alistapart.com/d/css-floats-101/example_b.html">Example B</a>, there are three blocks without the float property applied:</p>
+
+<pre><code>
+.block { 
+  width: 200px;
+  height: 200px;
+}
+
+</code></pre>
+
+<p>Notice how they stack on top of each other? This is the basic concept of <em>normal flow</em>. Here is the same example again, but this time the blocks are all floated in  <a href="http://www.alistapart.com/d/css-floats-101/example_c.html">Example C</a>:</p>
+
+<pre><code>
+.block { 
+  float: left;
+  width: 200px;
+  height: 200px;
+}
+
+</code></pre>
+
+<p>Now the blocks are sitting side by side. Great, we’ve got that figured out. But what about that part where I said “given there is enough room in the parent element for each floated element to sit?” I thought you’d never ask. Let’s take our last example and increase the box count five fold. The parent element in this example is the body of our document. Notice that depending on the size of your browser window (and subsequently the parent element <code>body</code>), the blocks drop to a second row, because there is not enough room for all of them to sit side by side. As you resize your browser window to allow more room, you’ll see the blocks rearrange themselves. Try it for yourself, in <a href="http://www.alistapart.com/d/css-floats-101/example_d.html">Example D</a>.</p>
+
+<h2>In the clear</h2>
+
+<p>The <code>float</code> property has a step-brother, <code>clear</code>. The two complement each other in a way that should make you a happy coder. As you may recall, a floated element is first laid out according to the normal flow, then removed from the normal flow. This means that every element that follows a floated element will behave contrary to what you expect. This is where I suspect we might start to get into trouble. Let’s look at a quick example with our blocks again. In <a href="http://www.alistapart.com/d/css-floats-101/example_e.html">Example E</a>, I am going to float two blocks (pink and blue) and directly after those, <em>not</em> float two more blocks (green and orange). Here is the HTML and CSS for <a href="http://www.alistapart.com/d/css-floats-101/example_e.html">Example E</a>:</p>
+
+<pre><code>
+&lt;div class="block pink float"&gt;&lt;/div&gt;
+&lt;div class="block blue float"&gt;&lt;/div&gt;
+&lt;div class="block green"&gt;&lt;/div&gt;
+&lt;div class="block orange"&gt;&lt;/div&gt;
+
+.block {
+  width: 200px;
+  height: 200px;
+}
+.float { float: left; }
+.pink { background: #ee3e64; }
+.blue { background: #44accf; }
+.green { background: #b7d84b; }
+.orange { background: #E2A741; }
+
+</code></pre>
+
+<p>How do you like that green block? Oh wait, where is it? It’s there, right underneath the pink block. The pink and blue blocks are both floated and behaving as we would expect, sitting side by side. Since they’re removed from the normal flow however, the green and orange blocks act as if they’re not even there. That is why our green block is hidden undereath our pink block. So how do we make our green block show up again? Enter the <code>clear</code> property. </p>
+
+<p>The <code>clear</code> property has five values available: <code>left</code>, <code>right</code>, <code>both</code>, <code>inherit</code>, and <code>none</code>. Assigning a value of <code>left</code> says the top edge of this element must sit below any element that has the <code>float: left</code> property applied to it. The same concept applies for the <code>right</code> value—the element must sit beneath any element that has the <code>float: right</code> property applied to it. Using the <code>both</code> value tells our element that its top edge must sit below any element floated <em>either</em> left or right. The <code>inherit</code> value takes on the <code>clear</code> property from its parent element, while the default value <code>none</code> behaves as you would expect. Arming ourselves with this knowledge, let's look at <a href="http://www.alistapart.com/d/css-floats-101/example_e2.html">Example E2</a>. This time we’ll clear our two floats by applying the <code>clear</code> property to our green block. Our slightly modified code looks like this:</p>
+
+<pre><code>
+&lt;div class="block pink float"&gt;&lt;/div&gt;
+&lt;div class="block blue float"&gt;&lt;/div&gt;
+&lt;div class="block green clear"&gt;&lt;/div&gt;
+&lt;div class="block orange"&gt;&lt;/div&gt;
+
+.block {
+  width: 200px;
+  height: 200px;
+}
+
+.float { float: left; }
+.clear { clear: left; }
+.pink { background: #ee3e64; }
+.blue { background: #44accf; }
+.green { background: #b7d84b; }
+.orange { background: #E2A741; }
+
+</code></pre>
+
+<p>By assigning a <code>clear: left</code> property value to our green block, we’ve told it to act as if the pink block is in the normal flow of our document, even though it has been removed, and to sit below it. This is an immensely powerful property; as you can see, it helps bring our non-floated elements back into the normal flow, a behavior that we tend to expect by default. That said, knowing and understanding both the <code>float</code> and <code>clear</code> property really starts to open some creative doors when you write your HTML and CSS.</p>
+
+<h2>Using floats for layouts</h2>
+
+<p>Let’s cover layouts. This is where the <code>float</code> property is incredibly useful. We can achieve the traditional two-column layout in a variety of ways; most of them use one or two floated elements. Let’s take a look at a simple example: a two-column website with the content area on the left, navigation on the right, and a header and footer area to cap it off. For the sake of this article, we’re only going to look at the code related to the floated elements. Here’s <a href="http://www.alistapart.com/d/css-floats-101/example_f.html">Example F</a>:</p>
+
+<pre><code>
+#container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#content {
+  float: left;
+  width: 660px;
+  background: #fff;
+}
+
+#navigation {
+  float: right;
+  width: 300px;
+  background: #eee;
+}
+
+#footer {
+  clear: both;
+  background: #aaa;
+  padding: 10px;
+}
+
+</code></pre>
+
+<p>Ok, let’s talk about what’s going on here. Our containing parent is aptly called  <code>#container</code>. This holds our floated elements in place. If we didn’t have it, our floated elements would shoot out to the far left and right of the viewport (our browser window). Next, we have <code>#content</code> and then <code>#navigation</code>. These are our floated elements. We sent <code>#content</code> to the left, and <code>#navigation</code> to the right, to achieve our two-column layout. I’ve defined a width for each, so that they fill our entire parent container. Finally, we have the <code>#footer</code>, on which we’ve set the <code>clear</code> property. As we know from before, this <code>clear</code> property brings the elements following any floated elements back into the normal flow. In this case the <code>#footer</code> has the value <code>both</code> assigned to it, causing our <code>#footer</code> to sit below both the <code>#content</code> and <code>#navigation</code> elements.</p>
+
+<p>What would have happened had we forgotten to assign the <code>clear</code> property to our footer? Take a look in <a href="http://www.alistapart.com/d/css-floats-101/example_g.html">Example G</a>.</p>
+
+<p>Our <code>#footer</code> has slid up underneath the <code>#navigation</code>. This is happening because there is room underneath the <code>#navigation</code> for the <code>#footer</code> to fill, and given the normal flow that we work within, this is actually the correct behavior. But it’s definitely not what we’re looking for, is it? You can start to see the interaction between the <code>float</code> and <code>clear</code> property and how they complement each other so well.</p>
+
+<p>If you have obsessive compulsive disorder, like I do, you may notice that back in <a href="http://www.alistapart.com/d/css-floats-101/example_f.html">Example F</a> there are unequal heights on <code>#content</code> and <code>#navigation</code>; there are several ways to address that, but that’s out of this article’s scope. I highly suggest reading <a href="http://www.alistapart.com/articles/fauxcolumns/">Faux Columns</a> by Dan Cederholm to learn how to make the heights appear to be the same, no matter what the content.</p>
+
+<h2>Float first</h2>
+
+<p>So far we’ve seen some pretty straightforward examples that don’t create many headaches. There are, however, some gotchas that we have to watch for when working with the float property. Surprisingly one of the biggest gotchas is not with the CSS but rather with the HTML itself. Where you place your floated element in your HTML can cause different results. Take a look at <a href="http://www.alistapart.com/d/css-floats-101/example_h.html">Example H</a>.</p>
+
+<p>Here we have a nice small-ish box that has an image floated on the right and some text surrounding it. Our CSS is basic:</p>
+
+<pre><code>
+#container {
+  width: 280px;
+  margin: 0 auto;
+  padding: 10px;
+  background: #aaa;
+  border: 1px solid #999;
+}
+
+img {
+  float: right;
+}
+
+</code></pre>
+
+<p>Our parent element, <code>#container</code> has a narrow width keeping our floated element, the <code>img</code>, within its bounds. Our HTML looks like so:</p>
+
+<pre><code>
+&lt;div id="container"&gt;
+  &lt;img src="image.gif" /&gt;
+  &lt;p&gt;This is some text contained within a 
+small-ish box. I'm using it as an example
+of how placing your floated elements in different 
+orders in your HTML can affect your layouts. For
+example, take a look at this great photo 
+placeholder that should be sitting on the right.&lt;/p&gt;
+&lt;/div&gt;
+
+</code>
+</pre>
+
+<p>This basic concept gives us the desired result, but what if we took this same example and rearranged the HTML just slightly? In <a href="http://www.alistapart.com/d/css-floats-101/example_i.html">Example I</a> we’ll move the <code>img</code> to come after our paragraph of text:</p>
+
+<pre><code>
+&lt;div id="container"&gt;
+  &lt;p&gt;This is some text contained within a
+small-ish box. I'm using it as an example
+of how placing your floated elements in different 
+orders in your HTML can affect your layouts. For
+example, take a look at this great photo 
+placeholder that should be sitting on the right.&lt;/p&gt;
+  &lt;img src="image.gif" /&gt;
+&lt;/div&gt;
+
+</code>
+</pre>
+
+<p>Our results are less than desirable. Our image is floated to the right, but it’s no longer in the top corner where we wanted it, falling instead underneath our paragraph; worse yet, it seems to be sticking out of the bottom of our <code>#container</code> parent element. What is going on? First, a rule that I have found that works nicely for my layouts is <em>float first</em>. That is, in my HTML, I almost always place my floated elements first in the markup, and before any non-floated elements that my float will interact with, such as the paragraph in the example above. Most of the time, this gives the desired result. Second, the reason that the image is seemingly sticking out of the bottom of our <code>#container</code> element has to do with something called collapsing. Let’s talk about what collapsing is and how we can best address it.</p>
+
+<h2>Collapsing</h2>
+
+<p>Collapsing is when a parent element that contains any number of floated elements doesn’t expand to completely surround those elements in the way it would if the elements were not floated. In Example I above, our parent element, <code>#container</code>, collapsed as if the floated <code>img</code> element wasn’t even there. This is not a browser bug, but rather an expected and proper behavior. Since floated elements are originally calculated in the normal flow and then <em>removed</em>, the <code>#container</code> element doesn’t consider it within its bounds and therefore acts as if it isn’t even there. As a note, Eric Meyer has a wonderful article on this topic called <a href="http://complexspiral.com/publications/containing-floats">Containing Floats</a> that goes into much more depth and is a highly useful resource. The good news is, we can remedy this problem in a myriad of ways; if you’re guessing that it has to do with the <code>clear</code> property then you’re on the right track.</p>
+
+<p>One of the most common ways to fix a collapsed parent element is to place an element with the <code>clear</code> property after our floated element. This will cause the parent to begin reflowing after the floated element. It may be easier to show this in action. Look at the HTML for <a href="http://www.alistapart.com/d/css-floats-101/example_j.html">Example J</a> which is the same as our previous example, but with one extra element added:</p>
+
+<pre><code>
+&lt;div id="container"&gt;
+  &lt;p&gt;This is some text contained within a 
+small-ish box. I'm using it as an example
+of how placing your floated elements in different
+orders in your HTML can affect your layouts. For 
+example, take a look at this great photo 
+placeholder that should be sitting on the right.&lt;/p&gt;
+  &lt;img src="image.gif" /&gt;
+  &lt;div style="clear: right;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+</code>
+</pre>
+
+<p>By placing a <code>div</code> with an inline style of <code>clear: right</code> we’ve managed to get our <code>#container</code> to clear our floated image by having it recalculate its height now that there’s an element sitting below it. While this solution works, it may not be the most elegant because we had to add extra markup to our document. It would have been sexier to handle this with CSS. There are a few ways to do that, so let’s take a look at one of them right now.</p>
+
+<p>Consider this example, a parent element containing three floated images. Our HTML looks like this:</p>
+
+<pre><code>
+&lt;div id="container"&gt;
+  &lt;img src="image.gif" /&gt;
+  &lt;img src="image.gif" /&gt;
+  &lt;img src="image.gif" /&gt;
+&lt;/div&gt;
+
+</code>
+</pre>
+
+<p>and our CSS looks like this:</p>
+
+<pre><code>
+#container {
+  width: 260px;
+  margin: 0 auto;
+  padding: 10px 0 10px 10px;
+  background: #aaa;
+  border: 1px solid #999;
+}
+
+img {
+  float: left;
+  margin: 0 5px 0 0;
+}
+
+</code>
+</pre>
+
+<p>When you look at this in action, you’ll quickly realize that our parent element is not containing our floated images. Again, this is expected because floated elements are removed from the flow, so according to our parent element, <code>#container</code>, it’s empty. Take a look at this in <a href="http://www.alistapart.com/d/css-floats-101/example_k.html">Example K</a>.</p>
+
+<p>Now let’s try to remedy this with CSS instead of adding extra HTML markup to our document as we did before. There is a method that allows a parent element to clear itself of any floated elements inside it. It uses a CSS property called <code>overflow</code> with a value of <code>hidden</code>. Note that the <code>overflow</code> property was not intended for this type of use, and could cause some issues such as hiding content or causing unwanted scrollbars to appear. You can read more about how it came to be and some of its caveats <a href="http://www.mezzoblue.com/archives/2005/03/03/clearance/">here</a> and <a href="http://www.quirksmode.org/blog/archives/2005/03/clearing_floats.html">here</a>. For our example however, we’ll apply the <code>overflow: hidden</code> property to our parent element, <code>#container</code>:</p>
+
+<pre><code>
+#container {
+  overflow: hidden;
+  width: 260px;
+  margin: 0 auto;
+  padding: 10px 0 10px 10px;
+  background: #aaa;
+  border: 1px solid #999;
+}
+
+</code>
+</pre>
+
+<p>Our results are in <a href="http://www.alistapart.com/d/css-floats-101/example_l.html">Example L</a>. Pretty cool right? Another method which gives similar results with fewer caveats uses the pseudo selector <code>:after</code>. Using our example, the code is:</p>
+
+<pre><code>
+#container:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+</code>
+</pre>
+
+<p>Here, the CSS is placing a new element after our <code>#container</code> element that has some content in it (in this case, a period), and setting it to be hidden with no height. You can find a very thorough and detailed overview of this technique at <a href="http://www.positioniseverything.net/easyclearing.html">Position is Everything</a>.</p>
+
+<p>Finally, Eric Meyer explains a third way to tackle this problem in his article referenced above, <a href="http://complexspiral.com/publications/containing-floats/">Containing Floats</a>. According to the CSS Spec 2.1:</p>
+
+<blockquote>
+<p>a floated element will expand to contain any floated elements that descend from it.</p>
+</blockquote>
+
+<p>So in this case, floating our container element would cause it to contain our image and paragraph the same way as the methods described above. </p>
+
+<p>Ultimately all of these solutions are doing the same thing. They are making the parent elements respect the flow of their floated children. Each one has its merits and usefulness. You should learn about each and then apply the ones that work best for your given situation.</p>
+
+<h2>Things that may cause rapid hair loss</h2>
+
+<p>Believe it or not there are a few browser bugs that floated elements can bring on, such as the <a href="http://www.positioniseverything.net/explorer/doubled-margin.html">double margin bug</a> and <a href="http://www.positioniseverything.net/explorer/threepxtest.html">the 3px Text-Jog</a>. Both of these are outside this article’s scope, but rest assured they are both easily remedied if you want to support older browsers. </p>
+
+<h2>Conclusion</h2>
+
+<p>Using the <code>float</code> property can pad your layout technique toolbox in some very cool and responsive ways. Understanding how they work and the principles by which they behave will give you a solid foundation for using floats effectively. <img src="./A List Apart  Articles  CSS Floats 101_files/eoai.gif" alt="" id="eoai"></p>
+
+<p>Translations:<br>
+<a href="http://www.ah-translator.de/ala.html">German</a><br>
+<a href="http://goo.gl/XkRPP">Italian</a></p>
+
+<div id="credits"> 
+<ul>
+ <li>Illustration by <a href="http://www.alistapart.com/authors/c/kevincornell">Kevin Cornell</a></li> 
+</ul> 
+</div>
+		</div>
+		
+		<div id="learnmore">
+		  <h2>Learn More</h2>
+		  <p>Related Topics: <a href="http://www.alistapart.com/topics/topic/css/" title="CSS">CSS</a>, <a href="http://www.alistapart.com/topics/topic/htmlxhtml/" title="HTML and XHTML">HTML and XHTML</a>, <a href="http://www.alistapart.com/topics/topic/layout/" title="Layout">Layout</a></p>
+		</div>
+		
+					<div class="discuss">
+			  <h2>Discuss</h2>
+			  <p>Was it good for you, too?  <span><a href="http://www.alistapart.com/comments/css-floats-101/">Join the discussion »</a></span></p>
+
+			  <div id="shareLinks">
+
+			  
+			  <h2>Share</h2>
+			  <a href="http://www.facebook.com/sharer.php?u=http://www.alistapart.com/articles/css-floats-101/&t=CSS+Floats+101"><img src="./A List Apart  Articles  CSS Floats 101_files/facebook.gif" alt="Facebook icon"></a>
+			  <a href="http://del.icio.us/post?url=http://www.alistapart.com/articles/css-floats-101/&title=CSS+Floats+101"><img src="./A List Apart  Articles  CSS Floats 101_files/delicious.gif" alt="Delicious icon"></a>
+			  <a href="http://twitter.com/?status=CSS+Floats+101:%20http://www.alistapart.com/articles/css-floats-101/"><img src="./A List Apart  Articles  CSS Floats 101_files/twitter.gif" alt="Twitter icon"></a>
+			  </div>
+
+			</div>
+				
+		<div id="authorbio">
+			
+			<h2>About the Author</h2>
+			
+				<p>
+					<img src="./A List Apart  Articles  CSS Floats 101_files/avatar_126968.jpg" alt="Noah Stokes">
+		
+		Noah Stokes is a web designer, developer and partner/co-founder of <a href="http://hellobold.com/">Bold</a>, a web studio.   He is a husband and father of two young boys, guitar player and music lover. You can find him on the Twitter (<a href="http://twitter.com/motherfuton">@motherfuton</a>) or catch him on his blog <a href="http://esbueno.noahstokes.com/">Es Bueno</a>.
+	</p>
+
+
+		
+		</div>
+		
+	</div>
+	
+	<div id="sidebar" class="column">
+	
+		<div class="first">
+	<form method="post" action="http://www.alistapart.com/">
+<div class="hiddenFields">
+<input type="hidden" name="ACT" value="19">
+<input type="hidden" name="XID" value="9c772ced3c3d4d4980e19c14b0f23c500cfa3346">
+<input type="hidden" name="RP" value="search/results">
+<input type="hidden" name="NRP" value="">
+<input type="hidden" name="RES" value="20">
+<input type="hidden" name="status" value="">
+<input type="hidden" name="weblog" value="articles|issues">
+<input type="hidden" name="search_in" value="entries">
+<input type="hidden" name="where" value="all">
+<input type="hidden" name="site_id" value="1">
+</div>
+
+
+	<h3>Search ALA</h3>
+	<label class="unifiedForm">
+	<input type="text" name="keywords" id="search">
+	<input type="image" src="./A List Apart  Articles  CSS Floats 101_files/go.gif" id="submit" value="Search">
+	</label>
+	<p><input type="checkbox" name="incdisc" id="incdisc" value="comments|entries" onclick="this.form.elements[&#39;search_in&#39;].value = (this.checked) ? &#39;everywhere&#39; : &#39;entries&#39;;"> include discussions</p>
+	</form>
+</div>
+
+<div id="topiclist">
+	<h3>Topics</h3>
+
+	<ul>
+	
+	<li><a href="http://www.alistapart.com/topics/code/" title="Code">Code</a></li>
+	
+	<li><a href="http://www.alistapart.com/topics/content/" title="Content">Content</a></li>
+	
+	<li><a href="http://www.alistapart.com/topics/culture/" title="Culture">Culture</a></li>
+	
+	<li><a href="http://www.alistapart.com/topics/design/" title="Design">Design</a></li>
+	
+	<li><a href="http://www.alistapart.com/topics/mobile/" title="Mobile">Mobile</a></li>
+	
+	<li><a href="http://www.alistapart.com/topics/process/" title="Process">Process</a></li>
+	
+	<li><a href="http://www.alistapart.com/topics/userscience/" title="User Science">User Science</a></li>
+	
+	</ul>
+
+</div>
+
+
+<div id="snapshot">
+  <h3>Snapshot</h3>
+  <p>By learning and understanding float property basics, along with position property basics, you will be able to achieve any layout with confidence.</p>
+</div>
+
+
+<div id="lucre">
+	<script type="text/javascript">
+	//<![CDATA[
+	(function(id) {
+	  document.write('<script type="text/javascript" src="' +
+	    'http://www.northmay.com/deck/deck' + id + '_js.php?' +
+	    (new Date().getTime()) + '"></' + 'script>');
+	})("AL");
+	//]]>
+	</script><script type="text/javascript" src="./A List Apart  Articles  CSS Floats 101_files/deckAL_js.php"></script><a href="http://xydo.com/?utm_source=deck&utm_medium=display&utm_campaign=clicks"><img class="ad" alt="XYDO" src="./A List Apart  Articles  CSS Floats 101_files/xydo2_clicks.png" border="0" height="90"></a><p class="ads">Generate 5-8x more clicks and social shares from your newsletters, <a href="http://xydo.com/?utm_source=deck&utm_medium=display&utm_campaign=clicks">with XYDO</a>.</p>
+	<p>
+	<a href="http://www.coudal.com/deck/">Ad via The Deck</a>
+	</p>
+</div>
+
+<div id="jobboard">
+	<h4>Job Board</h4>
+	<script src="./A List Apart  Articles  CSS Floats 101_files/job.fcgi" type="text/javascript"></script><div class="job">
+  <a href="http://jobs.37signals.com/jobs/11029">Coyote Logistics is looking for a Web Designer/Front End Developer.</a>
+</div>
+
+
+	<p class="monitor">More on the <a href="http://jobs.37signals.com/?source=ala">Job Board</a>.</p>
+</div>
+
+<div id="abookapart-side">
+	<h3>A Book Apart</h3>
+<a href="http://www.abookapart.com/"><img src="./A List Apart  Articles  CSS Floats 101_files/aba-7-thumb.png" class="aba-border" alt="Design Is a Job by Mike Monteiro"></a>
+	<p>Co-founder of Mule Design and raconteur Mike Monteiro wants to help you do your job better. From contracts to selling design and more, this brief book is packed with knowledge you can’t afford not to know.</p>
+	<p class="order-now"><a href="http://www.abookapart.com/">Buy today!</a></p>
+</div>
+
+<div id="colophon">
+
+	<p class="init">
+	Hosted by
+	<a href="http://happycoghosting.com/"><img src="./A List Apart  Articles  CSS Floats 101_files/hc-hosting.png" alt="Hosted by Happy Cog Hosting"></a>
+	</p>
+
+	<p class="init">
+	Published by
+	<a href="http://happycog.com/"><img src="./A List Apart  Articles  CSS Floats 101_files/happycog.png" title="" alt="Published by Happy Cog"></a>
+	</p>
+
+	<p>
+	ALA Mobile by
+	<a href="http://mobify.me/"><img src="./A List Apart  Articles  CSS Floats 101_files/mobify-logo.png" title="" alt="ALA Mobile by Mobify"></a>
+	</p>
+</div>
+		
+	</div>
+	
+	
+
+</div>
+
+<div id="footer">
+<p>
+<span class="issn">ISSN: <b>1534-0295</b></span>
+<span class="copyright"><a href="http://www.alistapart.com/copyright/" rel="license">Copyright ©</a> <span class="years">1998-2012</span> A List Apart Magazine and the authors.</span>
+</p>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./A List Apart  Articles  CSS Floats 101_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11757054-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+<sfmsg id="sfMsgId" data="{&quot;imageCount&quot;:0,&quot;ip&quot;:&quot;189.70.75.201&quot;}"></sfmsg></body></html>
