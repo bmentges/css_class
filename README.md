@@ -2,8 +2,8 @@
 
 Self-study on css, keeping my findings here.
 
-#1: http://www.alistapart.com/articles/css-positioning-101/
-#2: http://www.alistapart.com/articles/css-floats-101/
+1. http://www.alistapart.com/articles/css-positioning-101/
+2. http://www.alistapart.com/articles/css-floats-101/
 
 Fixes for IE: http://tagsoup.com/cookbook/css/fixed/
 
